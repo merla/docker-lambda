@@ -12,6 +12,6 @@ ENV http_proxy=http://10.40.32.20:80
 ENV https_proxy=http://10.40.32.20:80
 
 RUN rm -rf /var/runtime /var/lang && \
-  curl https://lambci.s3.amazonaws.com/fs/nodejs8.10.tgz | tar -zx -C /
+  curl http://10.40.32.20:80 https://lambci.s3.amazonaws.com/fs/nodejs8.10.tgz | tar -zx -C /
 
 CMD ["npm", "rebuild"]
