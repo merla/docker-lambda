@@ -5,6 +5,12 @@ ENV PATH=/var/lang/bin:/usr/local/bin:/usr/bin/:/bin \
     AWS_EXECUTION_ENV=AWS_Lambda_nodejs8.10 \
     NODE_PATH=/var/runtime:/var/task:/var/runtime/node_modules
 
+ENV HTTP_PROXY=http://10.40.32.20:80
+ENV HTTPS_PROXY=http://10.40.32.20:80
+ENV http_proxy=http://10.40.32.20:80
+ENV https_proxy=http://10.40.32.20:80
+
+
 RUN rm -rf /var/runtime /var/lang && \
   curl https://lambci.s3.amazonaws.com/fs/nodejs8.10.tgz | tar -zx -C /
 
